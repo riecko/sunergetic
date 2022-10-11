@@ -17,7 +17,7 @@ class CustomerService
      */
     public function list(Request $request)
     {
-        $response = Http::get(config('api.api_url'), $this->setApiHeader());
+        $response = Http::acceptJson()->get(config('api.api_url'), $this->setApiHeader());
         
         return $response->json();
     }
